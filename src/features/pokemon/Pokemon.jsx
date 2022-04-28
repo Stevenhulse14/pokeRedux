@@ -23,8 +23,12 @@ function Pokemon(props) {
         </button>
       </div>
       <div>
-        <h1>{pokemon.name}</h1>
-        <img src={pokemon.sprites.front_default} />
+        {Object.keys(pokemon).length ? (
+          <>
+            <h1>{pokemon.name}</h1>
+            <img alt="pokerman" src={pokemon.sprites.front_default} />
+          </>
+        ) : null}
       </div>
     </div>
   )
