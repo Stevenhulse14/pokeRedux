@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import {
-  increment,
-  decrement,
-  getPokemonAsync,
-  selectPokemon,
-} from './pokemonSlice'
+import { getPokemonAsync, selectPokemon } from './pokemonSlice'
 
 function Pokemon(props) {
-  const { pokemon } = useSelector(selectPokemon)
   const dispatch = useDispatch()
-
+  const {
+    pokemon: { singlePokemon, team },
+  } = useSelector(selectPokemon)
+  // const { team } = useSelector(selectTeam)
+  // console.log(team)
+  console.log({ singlePokemon, team })
   return (
     <div>
       <div>
@@ -21,14 +20,20 @@ function Pokemon(props) {
         >
           Get New Pokemon
         </button>
-      </div>
-      <div>
-        {Object.keys(pokemon).length ? (
+        {/* {Object.keys(singlePokemon).length ? (
           <>
-            <h1>{pokemon.name}</h1>
-            <img alt="pokerman" src={pokemon.sprites.front_default} />
+            <h2>{singlePokemon.name}</h2>
+            <img src={singlePokemon.sprites.front_shiny} alt="ayy" />
           </>
-        ) : null}
+        ) : null} */}
+        {team.map((member) => {
+          return (
+            <>
+              <h2>{member.name}</h2>
+              <img src={member.sprites.front_shiny} alt="ayy" />
+            </>
+          )
+        })}
       </div>
     </div>
   )
