@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { getPokemonAsync, selectPokemon } from './pokemonSlice'
 
@@ -20,12 +20,6 @@ function Pokemon(props) {
         >
           Get New Pokemon
         </button>
-        {/* {Object.keys(singlePokemon).length ? (
-          <>
-            <h2>{singlePokemon.name}</h2>
-            <img src={singlePokemon.sprites.front_shiny} alt="ayy" />
-          </>
-        ) : null} */}
         {team.map((member) => {
           return (
             <>
