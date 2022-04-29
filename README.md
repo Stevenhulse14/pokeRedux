@@ -1,3 +1,3 @@
 # pokeRedux
 
-And example of using Redux Toolkit and w the Pokemon API
+And example of using Redux Toolkit w the Pokemon API
