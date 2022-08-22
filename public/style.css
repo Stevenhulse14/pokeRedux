@@ -1,0 +1,31 @@
+button{
+    width: 75px;
+    height: 35px;
+}
+.pokeball{
+    width: 50%;
+    height: 50%;
+}
+.mainContainer{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.buttonContainer{
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    width: 200px;
+}
+.pokemonContainer{
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 50%;
+   padding-left: 10px;
+    
+}
+.team{
+    border: 1px solid black
+}
