@@ -1,14 +1,21 @@
 import React from "react";
+// we import useSelector and usDispatch from react-redux
 import { useSelector, useDispatch } from "react-redux";
-import { getPokemonAsync, addTeam } from "../../reducer/pokemonReducer";
+
+// Import our action creators or middleware
+import { getPokemonAsync } from "../../reducer/pokemonReducer";
+import { addTeam } from "../../reducer/teamReducer";
 
 function Pokemon() {
+  // useDispatch here
   const dispatch = useDispatch();
-  const { singlePokemon: pokemon, team } = useSelector(
-    (state) => state.pokemon
-  );
+  //useSelector here
+  const { singlePokemon: pokemon } = useSelector((state) => state.pokemon);
+  const { team } = useSelector((state) => state.team);
+  const state = useSelector((state) => state);
 
-  console.log(team);
+  console.log(state);
+  //dispatch making changes to state.
   return (
     <div>
       <div className="mainContainer">

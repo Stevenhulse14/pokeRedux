@@ -1,7 +1,6 @@
 //initial state
 const initialState = {
   singlePokemon: {},
-  team: [],
 };
 //action type
 const getPokemon = "SINGLE_POKEMON";
@@ -42,8 +41,8 @@ const pokmonReducer = (currState = initialState, action) => {
   switch (action.type) {
     case getPokemon:
       return { ...currState, singlePokemon: { ...action.pokemon } };
-    case pokemonTeam:
-      return { ...currState, team: [...currState.team, action.pokemon] };
+    // case pokemonTeam:
+    //   return { ...currState, team: [...currState.team, action.pokemon] };
     default:
       return currState;
   }
