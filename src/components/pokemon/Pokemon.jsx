@@ -4,11 +4,9 @@ import { getPokemonAsync, addTeam } from "../../reducer/pokemonReducer";
 
 function Pokemon() {
   const dispatch = useDispatch();
-  const { singlePokemon: pokemon, team } = useSelector(
-    (state) => state.pokemon
-  );
+  const { singlePokemon: pokemon, team } = useSelector((state) => state);
 
-  console.log(team);
+  console.log(team, pokemon);
   return (
     <div>
       <div className="mainContainer">
