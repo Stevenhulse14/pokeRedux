@@ -1,29 +1,26 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+
 import { getPokemonAsync, addTeam } from "../../reducer/pokemonReducer";
 
+//Import useSelector, and useDispatch from react-redux
+//Import your middleware and action creators
+//utilize dispatch and useSelector
+//dispatch changes the state and useSelector retrieves your state.
 function Pokemon() {
-  const dispatch = useDispatch();
-  const { singlePokemon: pokemon, team } = useSelector((state) => state);
+  const dispatch = () => {};
 
-  console.log(team, pokemon);
+  //console.log(team, pokemon);
   return (
     <div>
       <div className="mainContainer">
         <div className="buttonContainer">
-          <button
-            onClick={() =>
-              dispatch(getPokemonAsync(Math.floor(Math.random() * 300)))
-            }
-          >
-            Get New Pokemon
-          </button>
+          <button onClick={() => dispatch()}>Get New Pokemon</button>
 
-          <button onClick={() => dispatch(addTeam(pokemon))}>
+          <button onClick={() => dispatch()}>
             <img className="pokeball" src="pokeball.png" alt="pokeball" />
           </button>
         </div>
-        <div className="pokemonContainer">
+        {/* <div className="pokemonContainer">
           <div>
             <h3>
               {pokemon.name ? <>A Wild Poke Appared</> : <>Wild Poke ?</>}
@@ -48,7 +45,7 @@ function Pokemon() {
               );
             })}
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

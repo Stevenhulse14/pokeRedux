@@ -4,6 +4,7 @@ const initialState = {
   team: [],
 };
 //action type
+
 const getPokemon = "SINGLE_POKEMON";
 const pokemonTeam = "MY_TEAM";
 
@@ -27,11 +28,9 @@ export const addTeam = (pokemon) => {
 
 export const getPokemonAsync = (pokemonId) => async (dispatch) => {
   try {
-    const response = await fetch(
-      `https://pokeapi.co/api/v2/pokemon/${pokemonId}`
-    );
-    const pokemon = await response.json();
-    dispatch(fetchPokemon(pokemon));
+    //fetch response from api `https://pokeapi.co/api/v2/pokemon/${pokemonId}`
+    // await response.json()
+    //dispatch fetchPokemon
   } catch (err) {
     console.error(err);
   }
@@ -41,7 +40,9 @@ export const getPokemonAsync = (pokemonId) => async (dispatch) => {
 const pokmonReducer = (currState = initialState, action) => {
   switch (action.type) {
     case getPokemon:
+      // find a pokemon
       return { ...currState, singlePokemon: { ...action.pokemon } };
+    // my pokemon team
     case pokemonTeam:
       return { ...currState, team: [...currState.team, action.pokemon] };
     default:
